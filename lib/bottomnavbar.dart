@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:signapp/abcpage.dart';
 import 'package:signapp/accountpage.dart';
 import 'package:signapp/camarapage.dart';
+import 'package:signapp/favoritespage.dart';
 import 'package:signapp/lectionspage.dart';
 
 class botomnavbar extends StatefulWidget {
@@ -17,6 +18,7 @@ class _botomnavbarState extends State<botomnavbar> {
     CamaraPage(),
     AbcPage(),
     LectionsPage(),
+    FavoritesPage(),
     AccountPage(),
   ];
   void onTappedBar(int index) {
@@ -51,12 +53,17 @@ class _botomnavbarState extends State<botomnavbar> {
             backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorito',
+            backgroundColor: Colors.blue,
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.account_box),
             label: 'Account',
             backgroundColor: Colors.blue,
           ),
         ],
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Color.fromARGB(255, 18, 1, 92),
       ),
     );
   }

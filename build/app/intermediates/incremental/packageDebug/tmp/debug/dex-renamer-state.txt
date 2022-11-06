@@ -1,0 +1,4 @@
+#Sat Nov 05 18:00:34 CST 2022
+base.0=C\:\\Users\\blazb\\Desktop\\signapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

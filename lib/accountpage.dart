@@ -15,7 +15,7 @@ class _AccountPageState extends State<AccountPage> {
         title: Text("Account"),
       ),
       body: Center(
-        child: Text("This is main page"),
+        child: Text("This is the account page"),
       ),
     );
   }

@@ -15,7 +15,7 @@ class _CamaraPageState extends State<CamaraPage> {
         title: Text("Camara"),
       ),
       body: Center(
-        child: Text("This is main page"),
+        child: Text("This is the camera page"),
       ),
     );
   }
