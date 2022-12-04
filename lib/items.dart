@@ -25,7 +25,7 @@ class Items extends StatelessWidget {
               right: 0,
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color(0xEF4169D8),
+                  color: Color.fromARGB(238, 27, 69, 185),
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(15),
                   ),
