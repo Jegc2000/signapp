@@ -5,7 +5,21 @@ import 'package:google_sign_in/google_sign_in.dart';
 class Auth {
   final GoogleSignIn _googleCredentials = GoogleSignIn(scopes: ["email"]);
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  var googleEmail="";
+  var googleDisplayname="";
+  var googleImage="";
 
+  String returnGoogleEmail(){
+    return googleEmail;
+  }
+
+  String returnGoogleName(){
+    return googleDisplayname;
+  }
+
+  String returnGoogleImage(){
+    return googleImage;
+  }
 
   bool isAlreadyAuthenticated() {
     return _auth.currentUser != null;
@@ -23,6 +37,10 @@ class Auth {
     //Iniciar sesion con Google
     final googleUser = await _googleCredentials.signIn();
     final googleAuth = await googleUser!.authentication;
+    googleEmail= googleUser.email;
+    googleDisplayname = googleUser.displayName.toString();
+    googleImage = googleUser.photoUrl.toString();
+
 
 
     // credenciales de usuario de Google
@@ -35,12 +53,13 @@ class Auth {
   }
 
   Future<void> _createUserCollectionFirebase(String uid) async{
+    
     //Revisar si existe el documento del usuario que se esta autenticando
     var userDoc = await FirebaseFirestore.instance.collection("users").doc(uid).get();
     if(!userDoc.exists){ 
       //Si no existe, crear el documento 
       await FirebaseFirestore.instance.collection("users").doc(uid).set({
-        "favorites":[]
+        "favorites":[],
       });
     } else {
       return;

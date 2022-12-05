@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:signapp/abc/abcpage.dart';
-import 'package:signapp/account/accountpage.dart';
+import 'package:signapp/login/accountpage.dart';
 import 'package:signapp/camarapage.dart';
 import 'package:signapp/favorites/favoritespage.dart';
 import 'package:signapp/lections/lectionspage.dart';
@@ -15,7 +15,6 @@ class botomnavbar extends StatefulWidget {
 class _botomnavbarState extends State<botomnavbar> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    CamaraPage(),
     AbcPage(),
     LectionsPage(),
     FavoritesPage(),
@@ -37,11 +36,11 @@ class _botomnavbarState extends State<botomnavbar> {
         onTap: onTappedBar,
         currentIndex: _currentIndex,
         items: [
-          BottomNavigationBarItem(
+          /*BottomNavigationBarItem(
             icon: Icon(Icons.camera_alt_rounded),
             label: 'Camara',
             backgroundColor: Colors.blue,
-          ),
+          ),*/
           BottomNavigationBarItem(
             icon: Icon(Icons.sort_by_alpha),
             label: 'Abecedario',
