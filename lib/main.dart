@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:signapp/bottomnavbar.dart';
+import 'abc/bloc/abc_bloc.dart';
+import 'favorites/bloc/favorites_bloc.dart';
 import 'login/bloc/auth_bloc.dart';
 import 'login/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -15,6 +17,12 @@ void main() async {
         BlocProvider(
           create: (context) => AuthBloc()..add(VerifyAuthEvent()),
         ),
+        BlocProvider(
+          create: (context) => AbcBloc()..add(OnGetAbc()),
+        ),
+        BlocProvider(
+          create: (context) => FavoritesBloc()..add(OnGetFavorites()),
+        ),
       ],
       child: MyApp(),
     ),
@@ -25,11 +33,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.dark(),
-        primaryColor: Colors.purple,
-      ),
-      title: 'FindTrackApp',
+      title: 'SignApp',
       home: BlocConsumer<AuthBloc, AuthState>(listener: (context, state) {
         if (state is AuthErrorState) {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -45,7 +49,7 @@ class MyApp extends StatelessWidget {
           return LoginPage();
         } else {
           return Center(
-            child: CircularProgressIndicator(color: Colors.purple),
+            child: CircularProgressIndicator(color: Colors.orange),
           );
         }
       }),

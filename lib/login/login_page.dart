@@ -19,36 +19,40 @@ class _LoginPageState extends State<LoginPage> {
           "Sign In",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 40,
+            fontSize: 25,
           ),
         ),
       ),
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            //El boton de inicio con Google
-            Center(
-              child: MaterialButton(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        "Iniciar sesión con Google",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                  color: Colors.green,
-                  minWidth: MediaQuery.of(context).size.width - 30,
-                  onPressed: () {
-                    BlocProvider.of<AuthBloc>(context).add(GoogleAuthEvent());
-                  }),
+            Text(
+              "Bienvenido a SignApp",
+              style: TextStyle(
+                color: Color.fromARGB(255, 9, 94, 163),
+                fontSize: 30,
+              ),
             ),
+            MaterialButton(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      "Iniciar sesión con Google",
+                      style: TextStyle(color: Colors.white,fontSize: 15,),
+                    ),
+                  ],
+                ),
+                color: Colors.green,
+                minWidth: MediaQuery.of(context).size.width - 32,
+                onPressed: () {
+                  BlocProvider.of<AuthBloc>(context).add(GoogleAuthEvent());
+                }),
           ],
         ),
+      ),
     );
   }
 }

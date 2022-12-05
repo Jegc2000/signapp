@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Items extends StatelessWidget {
-  final Map<String, String> itemsData;
-  Items({super.key, required this.itemsData});
+class Items extends StatefulWidget {
+  final Map<String, dynamic> itemsData;
 
+  Items({super.key, required this.itemsData});
+  
+  @override
+  State<Items> createState() => _ItemsState();
+}
+
+class _ItemsState extends State<Items> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +21,7 @@ class Items extends StatelessWidget {
           children: [
             Positioned.fill(
               child: Image.network(
-                "${itemsData["image"]}",
+                widget.itemsData["image"],
                 fit: BoxFit.fill,
               ),
             ),
@@ -33,7 +39,7 @@ class Items extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "${itemsData["title"]}",
+                      widget.itemsData["title"],
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
@@ -47,3 +53,4 @@ class Items extends StatelessWidget {
     );
   }
 }
+

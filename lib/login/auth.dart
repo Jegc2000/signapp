@@ -40,7 +40,7 @@ class Auth {
     if(!userDoc.exists){ 
       //Si no existe, crear el documento 
       await FirebaseFirestore.instance.collection("users").doc(uid).set({
-        "favoriteSongs":[]
+        "favorites":[]
       });
     } else {
       return;

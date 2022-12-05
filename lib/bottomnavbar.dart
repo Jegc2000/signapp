@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:signapp/abcpage.dart';
-import 'package:signapp/accountpage.dart';
+import 'package:signapp/abc/abcpage.dart';
+import 'package:signapp/account/accountpage.dart';
 import 'package:signapp/camarapage.dart';
-import 'package:signapp/favoritespage.dart';
-import 'package:signapp/lectionspage.dart';
+import 'package:signapp/favorites/favoritespage.dart';
+import 'package:signapp/lections/lectionspage.dart';
 
 class botomnavbar extends StatefulWidget {
   const botomnavbar({super.key});
