@@ -9,3 +9,12 @@ abstract class AbcEvent extends Equatable {
 
 class OnGetAbc extends AbcEvent{}
 
+class OnAddToFavorites extends AbcEvent{
+  final Map<String, dynamic> infoAboutItem;
+
+  OnAddToFavorites({required this.infoAboutItem});
+
+  @override
+  List<Object> get props => [infoAboutItem];
+}
+

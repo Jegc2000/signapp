@@ -10,6 +10,7 @@ abstract class AbcState extends Equatable {
 class AbcInitial extends AbcState {}
 
 class AbcLoadingState extends AbcState{}
+
 class AbcSuccessState extends AbcState{
   final List<dynamic> Abc;
 
@@ -18,4 +19,7 @@ class AbcSuccessState extends AbcState{
   @override
   List<Object> get props => [Abc];
 }
+
 class AbcErrorState extends AbcState{}
+
+class AbcUploadingState extends AbcState{}

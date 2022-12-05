@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               "Bienvenido a SignApp",
               style: TextStyle(
-                color: Color.fromARGB(255, 9, 94, 163),
+                color: Color.fromARGB(255, 3, 58, 104),
                 fontSize: 30,
               ),
             ),
@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 color: Colors.green,
-                minWidth: MediaQuery.of(context).size.width - 32,
+                minWidth: MediaQuery.of(context).size.width - 30,
                 onPressed: () {
                   BlocProvider.of<AuthBloc>(context).add(GoogleAuthEvent());
                 }),

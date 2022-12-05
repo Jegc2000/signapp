@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../items.dart';
+import 'abcitems.dart';
 import 'bloc/abc_bloc.dart';
 
 class AbcPage extends StatefulWidget {
@@ -33,7 +33,7 @@ class _AbcPageState extends State<AbcPage> {
                       crossAxisSpacing: 4.0,
                       mainAxisSpacing: 4.0),
                   itemBuilder: (BuildContext context, int index) {
-                    return Items(itemsData: state.Abc[index]);
+                    return ItemsAbc(abcItemsData: state.Abc[index]);
                   },
                 ),
               ),

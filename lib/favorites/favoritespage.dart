@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../items.dart';
+import '../favorites/favoritesitems.dart';
 import 'bloc/favorites_bloc.dart';
 
 class FavoritesPage extends StatefulWidget {
@@ -33,7 +33,7 @@ class _AbcPageState extends State<FavoritesPage> {
                       crossAxisSpacing: 4.0,
                       mainAxisSpacing: 4.0),
                   itemBuilder: (BuildContext context, int index) {
-                    return Items(itemsData: state.userFavorites[index]);
+                    return FavoritesItems(favoriteItemsData: state.userFavorites[index]);
                   },
                 ),
               ),

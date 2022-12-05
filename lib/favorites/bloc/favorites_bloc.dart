@@ -68,6 +68,15 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       }
 
       emit(FavoritesRemoveSuccessState());
+
+      //Coleccion de favoritos
+      List<dynamic> listIds = user.data()?["favorites"] ?? [];
+
+      //Mandar la informacion
+      emit(FavoritesSuccessState(userFavorites: listIds));
+      emit(FavoritesLoadingState());
+      emit(FavoritesSuccessState(userFavorites: listIds));
+      
     } catch (e) {
       print("Error al intentar borrar el item: $e");
       return;
